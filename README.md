@@ -1,8 +1,8 @@
 # Student Management REST API
 
-A comprehensive REST API for managing students built with Spring Boot 3+, Spring Data JPA, and MySQL.
+A production-ready RESTful API service for comprehensive student lifecycle management, architected with Spring Boot 3.x framework, leveraging Spring Data JPA for persistence abstraction, and MySQL as the relational database management system.
 
-## Features
+## Core Capabilities
 
 - ✅ Create, Read, Update, Delete (CRUD) operations for students
 - ✅ Field validation (email format, not null, age > 18)
@@ -98,19 +98,19 @@ http://localhost:8080/api/students
 - **Request Body:**
   ```json
   {
-    "name": "John Doe",
-    "email": "john.doe@example.com",
-    "course": "Computer Science",
+    "name": "Dulitha Pathum",
+    "email": "dulithapathum@gmail.com",
+    "course": "IT",
     "age": 20
   }
   ```
 - **Response:** 201 Created
   ```json
   {
-    "id": 1,
-    "name": "John Doe",
-    "email": "john.doe@example.com",
-    "course": "Computer Science",
+    "id": 3,
+    "name": "Dulitha Pathum",
+    "email": "dulithapathum@gmail.com",
+    "course": "IT",
     "age": 20
   }
   ```
@@ -132,10 +132,10 @@ http://localhost:8080/api/students
 - **Response:** 200 OK
   ```json
   {
-    "id": 1,
-    "name": "John Doe",
-    "email": "john.doe@example.com",
-    "course": "Computer Science",
+    "id": 3,
+    "name": "Dulitha Pathum",
+    "email": "dulithapathum@gmail.com",
+    "course": "IT",
     "age": 20
   }
   ```
@@ -189,46 +189,39 @@ http://localhost:8080/swagger-ui/index.html
 curl -X POST http://localhost:8080/api/students \
   -H "Content-Type: application/json" \
   -d '{
-    "name": "John Doe",
-    "email": "john.doe@example.com",
-    "course": "Computer Science",
+    "name": "Dulitha Pathum",
+    "email": "dulithapathum@gmail.com",
+    "course": "IT",
     "age": 20
   }'
 ```
-![alt text](image-1.png)
+![IMG-20251114-WA0004](https://github.com/user-attachments/assets/6931dd77-b2b1-4a64-8577-561869dba325)
 **Get all students:**
+
 ```bash
 curl http://localhost:8080/api/students
 ```
-![alt text](image.png)
+![IMG-20251114-WA0003](https://github.com/user-attachments/assets/fc6fc2ab-6bae-4d92-becd-096e99ee99f1)
 **Get student by ID:**
 ```bash
-curl http://localhost:8080/api/students/1
+curl http://localhost:8080/api/students/3
 ```
-![alt text](image-2.png)
-
+![IMG-20251114-WA0005](https://github.com/user-attachments/assets/ea3950d1-0270-4a62-a27d-55b42c89d725)
 **Update student:**
 ```bash
 curl -X PUT http://localhost:8080/api/students/1 \
   -H "Content-Type: application/json" \
   -d '{
-    "name": "John Smith",
-    "email": "john.smith@example.com",
-    "course": "Mathematics",
-    "age": 21
+    "name": "Dulitha Pathum",
+    "email": "dulithapathum@gmail.com",
+    "course": "Software Engineer",
+    "age": 20
   }'
 ```
-![alt text](image-3.png)
-
+![IMG-20251114-WA0002](https://github.com/user-attachments/assets/b86b020a-781c-4731-b084-c60a8cb9ee12)
 **Delete student:**
 ```bash
-curl -X DELETE http://localhost:8080/api/students/1
-```
-![alt text](<Postman Test Screenshots/DELETE.png>)
-
-**Search students:**
-```bash
-curl "http://localhost:8080/api/students?search=Computer&page=0&size=10"
+curl -X DELETE http://localhost:8080/api/students/3
 ```
 
 ### Using Postman
